@@ -1,5 +1,5 @@
 export type Post = {
   content: string;
-  image: string;
+  image: unknown;
   createdTimeStamp: string;
 };
