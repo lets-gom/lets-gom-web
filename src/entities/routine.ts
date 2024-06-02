@@ -1,21 +1,37 @@
-import { Task } from "./task";
-import { StateType } from "./task";
+import { Task } from "@/entities/task";
 
 export type Routine = {
-  category: CategoryType;
+  category: RoutineCategory;
   name: string;
-  state: StateType;
+  state: RoutineState;
   startDate: string;
   endDate?: string;
   startTime: string;
   duration?: number;
-  schedule: ScheduleType;
+  schedule: RoutineSchedule;
   tasks: Task[];
 };
 
-type CategoryType = "HEALTH" | "MONEY" | "STUDY";
+type RoutineCategory = "HEALTH" | "MONEY" | "STUDY";
 
-type ScheduleType = "DAILY" | WeeklyType | MonthlyType;
+type RoutineState = "NOT_STARTED" | "IN_PROGRESS" | "SUCCEEDED" | "FAILED";
+
+type RoutineSchedule = DailySchedule | WeeklySchedule | MonthlySchedule;
+
+interface DailySchedule {
+  type: "DAILY";
+  days?: never;
+}
+
+interface WeeklySchedule {
+  type: "WEEKLY";
+  days: WeeklyType[];
+}
+
+interface MonthlySchedule {
+  type: "MONTHLY";
+  days: MonthlyType[];
+}
 
 type WeeklyType = "MON" | "TUE" | "WED" | "THU" | "FRI" | "SAT" | "SUN";
 

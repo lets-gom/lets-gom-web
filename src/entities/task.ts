@@ -1,6 +1,6 @@
 export type Task = {
-  state: StateType;
+  state: TaskState;
   date: string;
 };
 
-export type StateType = "NOT_STARTED" | "IN_PROGRESS" | "SUCCEEDED" | "FAILED";
+type TaskState = "NOT_STARTED" | "SUCCEEDED" | "FAILED";

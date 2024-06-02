@@ -1,14 +1,14 @@
-import { Avatar } from "./avatar";
-import { Badge } from "./badge";
-import { Routine } from "./routine";
-import { Task } from "./task";
+import { Avatar } from "@/entities/avatar";
+import { Badge } from "@/entities/badge";
+import { Routine } from "@/entities/routine";
+import { Task } from "@/entities/task";
 
 export type User = {
-  account: string;
-  id: string;
+  account: unknown;
+  id: number;
   name: string;
-  image: string;
-  agreement: boolean;
+  image: unknown;
+  agreement: Record<string, boolean>;
   avatar: Avatar;
   badges: Badge[];
   routines: Routine[];

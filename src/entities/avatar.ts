@@ -1,15 +1,15 @@
-import { Accessory } from "./accessory";
+import { Accessory } from "@/entities/accessory";
 
 export type Avatar = {
   type: AvatarType;
-  emotion: EmotionType;
+  emotion: AvatarEmotion;
   accessories: Accessory[];
 };
 
-// 추후 추가될 수 있음
+/** @todo 추후 구체적으로 설정 */
 type AvatarType = "BEAR";
 
-type EmotionType =
+type AvatarEmotion =
   | "HAPPY"
   | "SAD"
   | "ANGRY"
