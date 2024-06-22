@@ -2,7 +2,7 @@
 
 import { FlatCompat } from '@eslint/eslintrc';
 import jsLint from '@eslint/js';
-import prettier from 'eslint-plugin-prettier/recommended';
+import prettierLintRecommendedConfig from 'eslint-plugin-prettier/recommended';
 import tsLint, { config } from 'typescript-eslint';
 
 const compat = new FlatCompat();
@@ -67,5 +67,5 @@ export default config(
   }),
 
   // Prettier
-  prettier,
+  prettierLintRecommendedConfig,
 );
