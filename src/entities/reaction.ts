@@ -1,6 +1,7 @@
 import { User } from "@/entities/user";
 
 export type Reaction = {
+  id: number;
   type: ReactionType;
   users?: User[];
 };
