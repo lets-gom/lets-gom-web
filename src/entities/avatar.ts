@@ -1,6 +1,7 @@
 import { Accessory } from '@/entities/accessory';
 
 export type Avatar = {
+  id: number;
   type: AvatarType;
   emotion: AvatarEmotion;
   accessories: Accessory[];

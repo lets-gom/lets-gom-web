@@ -4,8 +4,8 @@ import { Routine } from '@/entities/routine';
 import { Task } from '@/entities/task';
 
 export type User = {
-  account: unknown;
   id: number;
+  account: unknown;
   name: string;
   image: unknown;
   agreement: Record<string, boolean>;

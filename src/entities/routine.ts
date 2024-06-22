@@ -1,6 +1,7 @@
 import { Task } from '@/entities/task';
 
 export type Routine = {
+  id: number;
   category: RoutineCategory;
   name: string;
   state: RoutineState;

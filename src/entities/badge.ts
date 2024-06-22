@@ -1,4 +1,5 @@
 export type Badge = {
+  id: number;
   type: BadgeType;
   name: string;
   source: string;
