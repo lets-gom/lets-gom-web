@@ -6,4 +6,4 @@ export type Badge = {
 };
 
 /** @todo 추후 구체적으로 설정 */
-type BadgeType = "HEALTH" | "MONEY" | "STUDY";
+type BadgeType = 'HEALTH' | 'MONEY' | 'STUDY';

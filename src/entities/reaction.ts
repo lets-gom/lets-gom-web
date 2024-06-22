@@ -1,4 +1,4 @@
-import { User } from "@/entities/user";
+import { User } from '@/entities/user';
 
 export type Reaction = {
   id: number;
@@ -7,4 +7,4 @@ export type Reaction = {
 };
 
 /** @todo 추후 구체적으로 설정 */
-type ReactionType = "like";
+type ReactionType = 'like';
