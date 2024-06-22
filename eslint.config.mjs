@@ -20,6 +20,7 @@ export default config(
         'warn',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+      '@typescript-eslint/no-inferrable-types': 'warn',
     },
   },
 
