@@ -27,6 +27,17 @@ export default config(
   ...compat.config({
     plugins: ['import'],
     rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['./*', '../*', '!./*.module.css'],
+              message: 'No relative imports',
+            },
+          ],
+        },
+      ],
       'import/first': 'error',
       'import/newline-after-import': ['error', { considerComments: true }],
       'import/no-unresolved': 'off',
