@@ -2,7 +2,7 @@ import { User } from "@/entities/user";
 
 export type UserRepository = {
   getUser: () => Promise<User>;
-  updateUser: (userId: string) => Promise<void>;
+  updateUser: ({ id }: Pick<User, "id">) => Promise<void>;
   listFriends: () => Promise<User[]>;
-  deleteFriend: (friendId: string) => Promise<void>;
+  deleteFriend: ({ id }: Pick<User, "id">) => Promise<void>;
 };
