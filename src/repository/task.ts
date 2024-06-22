@@ -1,6 +1,6 @@
 import { Task } from "@/entities/task";
 
 export type TaskRepository = {
-  updateTask: (task: Omit<Task, "id">) => Promise<void>;
+  updateTask: (task: Task) => Promise<void>;
   deleteTask: ({ id }: Pick<Task, "id">) => Promise<void>;
 };
