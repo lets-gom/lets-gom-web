@@ -4,8 +4,8 @@ export type Event = {
 };
 
 type EventType =
-  | "ROUTINE_STARTED"
-  | "ROUTINE_SUCCEEDED"
-  | "ROUTINE_FAILED"
-  | "TASK_SUCCEEDED"
-  | "TASK_FAILED";
+  | 'ROUTINE_STARTED'
+  | 'ROUTINE_SUCCEEDED'
+  | 'ROUTINE_FAILED'
+  | 'TASK_SUCCEEDED'
+  | 'TASK_FAILED';

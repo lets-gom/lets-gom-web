@@ -1,7 +1,7 @@
-import { Avatar } from "@/entities/avatar";
-import { Badge } from "@/entities/badge";
-import { Routine } from "@/entities/routine";
-import { Task } from "@/entities/task";
+import { Avatar } from '@/entities/avatar';
+import { Badge } from '@/entities/badge';
+import { Routine } from '@/entities/routine';
+import { Task } from '@/entities/task';
 
 export type User = {
   account: unknown;

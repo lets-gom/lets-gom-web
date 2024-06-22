@@ -1,4 +1,4 @@
-import { Task } from "@/entities/task";
+import { Task } from '@/entities/task';
 
 export type Routine = {
   category: RoutineCategory;
@@ -12,27 +12,27 @@ export type Routine = {
   tasks: Task[];
 };
 
-type RoutineCategory = "HEALTH" | "MONEY" | "STUDY";
+type RoutineCategory = 'HEALTH' | 'MONEY' | 'STUDY';
 
-type RoutineState = "NOT_STARTED" | "IN_PROGRESS" | "SUCCEEDED" | "FAILED";
+type RoutineState = 'NOT_STARTED' | 'IN_PROGRESS' | 'SUCCEEDED' | 'FAILED';
 
 type RoutineSchedule = DailySchedule | WeeklySchedule | MonthlySchedule;
 
 interface DailySchedule {
-  type: "DAILY";
+  type: 'DAILY';
   days?: never;
 }
 
 interface WeeklySchedule {
-  type: "WEEKLY";
+  type: 'WEEKLY';
   days: WeeklyType[];
 }
 
 interface MonthlySchedule {
-  type: "MONTHLY";
+  type: 'MONTHLY';
   days: MonthlyType[];
 }
 
-type WeeklyType = "MON" | "TUE" | "WED" | "THU" | "FRI" | "SAT" | "SUN";
+type WeeklyType = 'MON' | 'TUE' | 'WED' | 'THU' | 'FRI' | 'SAT' | 'SUN';
 
-type MonthlyType = number | "MID" | "END";
+type MonthlyType = number | 'MID' | 'END';

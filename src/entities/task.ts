@@ -3,4 +3,4 @@ export type Task = {
   date: string;
 };
 
-type TaskState = "NOT_STARTED" | "SUCCEEDED" | "FAILED";
+type TaskState = 'NOT_STARTED' | 'SUCCEEDED' | 'FAILED';

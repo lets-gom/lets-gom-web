@@ -4,4 +4,4 @@ export type Accessory = {
 };
 
 /** @todo 추후 구체적으로 설정 */
-type AccessoryType = "GLASSES" | "DUMBBELL" | "BOOK";
+type AccessoryType = 'GLASSES' | 'DUMBBELL' | 'BOOK';
