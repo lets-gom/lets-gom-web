@@ -1,4 +1,5 @@
 export type Accessory = {
+  id: number;
   type: AccessoryType;
   source: string;
 };

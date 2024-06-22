@@ -1,4 +1,5 @@
 export type Task = {
+  id: number;
   state: TaskState;
   date: string;
 };

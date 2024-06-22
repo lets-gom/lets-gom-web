@@ -1,4 +1,5 @@
 export type Event = {
+  id: number;
   type: EventType;
   createdTimeStamp: string;
 };
