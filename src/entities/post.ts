@@ -1,4 +1,4 @@
-import { Reaction } from "./reaction";
+import { Reaction } from "@/entities/reaction";
 
 export type Post = {
   content: string;
