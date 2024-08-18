@@ -7,7 +7,7 @@ export type User = {
   id: number;
   account: unknown;
   name: string;
-  image: unknown;
+  image?: unknown;
   agreement: Record<string, boolean>;
   avatar: Avatar;
   badges: Badge[];
