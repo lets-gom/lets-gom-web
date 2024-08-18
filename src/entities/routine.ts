@@ -1,6 +1,7 @@
-import { Task } from "@/entities/task";
+import { Task } from '@/entities/task';
 
 export type Routine = {
+  id: number;
   category?: RoutineCategory;
   name: string;
   state: RoutineState;
@@ -24,7 +25,7 @@ interface DailySchedule {
 }
 
 interface WeeklySchedule {
-  type: "WEEKLY";
+  type: 'WEEKLY';
   days: WeeklyType[];
 }
 

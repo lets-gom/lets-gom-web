@@ -1,19 +1,20 @@
-import { Accessory } from "@/entities/accessory";
+import { Accessory } from '@/entities/accessory';
 
 export type Avatar = {
+  id: number;
   type: AvatarType;
   emotion: AvatarEmotion;
   accessories?: Accessory[];
 };
 
 /** @todo 추후 구체적으로 설정 */
-type AvatarType = "BEAR";
+type AvatarType = 'BEAR';
 
 type AvatarEmotion =
-  | "HAPPY"
-  | "SAD"
-  | "ANGRY"
-  | "SURPRISED"
-  | "CONFUSED"
-  | "EXCITED"
-  | "NEUTRAL";
+  | 'HAPPY'
+  | 'SAD'
+  | 'ANGRY'
+  | 'SURPRISED'
+  | 'CONFUSED'
+  | 'EXCITED'
+  | 'NEUTRAL';
