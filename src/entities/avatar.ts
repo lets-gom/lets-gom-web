@@ -3,7 +3,7 @@ import { Accessory } from "@/entities/accessory";
 export type Avatar = {
   type: AvatarType;
   emotion: AvatarEmotion;
-  accessories: Accessory[];
+  accessories?: Accessory[];
 };
 
 /** @todo 추후 구체적으로 설정 */

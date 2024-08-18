@@ -7,12 +7,12 @@ export type User = {
   account: unknown;
   id: number;
   name: string;
-  image: unknown;
+  image?: unknown;
   agreement: Record<string, boolean>;
   avatar: Avatar;
-  badges: Badge[];
+  badges?: Badge[];
   routines: Routine[];
   tasks: Task[];
-  friends: User[];
+  friends?: User[];
   events: Event[];
 };
