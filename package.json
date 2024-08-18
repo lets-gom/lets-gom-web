@@ -10,6 +10,7 @@
   },
   "packageManager": "pnpm@9.0.6",
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
