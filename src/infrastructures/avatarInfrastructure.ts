@@ -2,10 +2,10 @@ import { Avatar } from '@/entities/avatar';
 import { AvatarRepository } from '@/repositories/avatar';
 import { LetsGomBackend } from '@/utils/api';
 
-export class AvatarInfrastructure implements AvatarRepository {
+export class AvatarAPIRepository implements AvatarRepository {
   async listAvatars(): Promise<Avatar[]> {
     const endpoint = '/api/avatars';
-    const { data } = await LetsGomBackend.get<Avatar[]>(endpoint);
+    const { data } = await LetsGomBackend.get(endpoint);
     return data;
   }
 }

@@ -2,10 +2,10 @@ import { Routine } from '@/entities/routine';
 import { RoutineRepository } from '@/repositories/routine';
 import { LetsGomBackend } from '@/utils/api';
 
-export class RoutineInfrastructure implements RoutineRepository {
+export class RoutineAPIRepository implements RoutineRepository {
   async listRoutines(): Promise<Routine[]> {
     const endpoint = '/api/routines';
-    const { data } = await LetsGomBackend.get<Routine[]>(endpoint);
+    const { data } = await LetsGomBackend.get(endpoint);
     return data;
   }
 

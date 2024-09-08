@@ -1,32 +1,53 @@
-import axios from 'axios';
-
 const BASE_URL = 'https://api.letsgom.com'; // 임시 URL
 
-export const LetsGomBackend = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-LetsGomBackend.interceptors.request.use(
-  async (config) => {
+export const LetsGomBackend = {
+  async request(endpoint: string, options: RequestInit = {}) {
+    const url = `${BASE_URL}${endpoint}`;
     const token = localStorage.getItem('token');
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  },
-);
+    const headers = {
+      'Content-Type': 'application/json',
+      ...(token && { Authorization: `Bearer ${token}` }),
+      ...options.headers,
+    };
 
-LetsGomBackend.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    // 세션 만료 Refresh Token 재발급 로직 추가
-    console.error('API 요청 실패:', error);
-    return Promise.reject(error);
+    try {
+      const response = await fetch(url, {
+        ...options,
+        headers,
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP 오류: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('API 요청 실패:', error);
+      throw error;
+    }
   },
-);
+
+  get(endpoint: string, options = {}) {
+    return this.request(endpoint, { ...options, method: 'GET' });
+  },
+
+  post(endpoint: string, data: Record<string, any>, options = {}) {
+    return this.request(endpoint, {
+      ...options,
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  put(endpoint: string, data: Record<string, any>, options = {}) {
+    return this.request(endpoint, {
+      ...options,
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
+  delete(endpoint: string, options = {}) {
+    return this.request(endpoint, { ...options, method: 'DELETE' });
+  },
+};

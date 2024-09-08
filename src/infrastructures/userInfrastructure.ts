@@ -2,10 +2,10 @@ import { User } from '@/entities/user';
 import { UserRepository } from '@/repositories/user';
 import { LetsGomBackend } from '@/utils/api';
 
-export class UserInfrastructure implements UserRepository {
+export class UserAPIRepository implements UserRepository {
   async getUser(): Promise<User> {
     const endpoint = '/api/users/me';
-    const { data } = await LetsGomBackend.get<User>(endpoint);
+    const { data } = await LetsGomBackend.get(endpoint);
     return data;
   }
 
@@ -16,7 +16,7 @@ export class UserInfrastructure implements UserRepository {
 
   async listFriends(): Promise<User[]> {
     const endpoint = '/api/users/me/friends';
-    const { data } = await LetsGomBackend.get<User[]>(endpoint);
+    const { data } = await LetsGomBackend.get(endpoint);
     return data;
   }
 

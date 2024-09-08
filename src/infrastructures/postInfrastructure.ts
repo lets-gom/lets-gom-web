@@ -2,10 +2,10 @@ import { Post } from '@/entities/post';
 import { PostRepository } from '@/repositories/post';
 import { LetsGomBackend } from '@/utils/api';
 
-export class PostInfrastructure implements PostRepository {
+export class PostAPIRepository implements PostRepository {
   async listPosts(): Promise<Post[]> {
     const endpoint = '/api/posts';
-    const { data } = await LetsGomBackend.get<Post[]>(endpoint);
+    const { data } = await LetsGomBackend.get(endpoint);
     return data;
   }
 
